@@ -7,12 +7,10 @@
 
 import UIKit
 
-    //MARK: Private
+    //MARK: - Private
 private let reuseIdentifier = "cellButton"
-private var dataSpace: [Photo] = []
 
-
-   
+    //MARK: - Enum
 
 enum ActionButton: String, CaseIterable {
     case buttonOne = "Show info space"
@@ -20,10 +18,19 @@ enum ActionButton: String, CaseIterable {
 }
 
 final class CollectionViewController: UICollectionViewController {
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        fetchImage()
+    }
+    
+    //MARK: - Outlet
+    @IBOutlet var imageView: UIImageView!
+    
     let actionButton = ActionButton.allCases
-
-
-    // MARK: UICollectionViewDataSource
+    
+    // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         actionButton.count
     }
@@ -44,14 +51,14 @@ final class CollectionViewController: UICollectionViewController {
         let actionButton = actionButton[indexPath.item]
         
         switch actionButton {
-        case .buttonOne: fetchButtonOne()
+        case .buttonOne: fetchSpace()
        
         }
         
     }
 
     
-   //MARK: Private Alert
+   //MARK: - Private Alert
     private func succesAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(
@@ -80,28 +87,39 @@ final class CollectionViewController: UICollectionViewController {
 
 }
 
-    //MARK: Extension UICollectionViewDelegateFlowLayout
+    //MARK: - Extension UICollectionViewDelegateFlowLayout
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        CGSize(width: UIScreen.main.bounds.width - 40 , height: 100)
+        CGSize(width: UIScreen.main.bounds.width - 90 , height: 50)
     }
 }
 
 extension CollectionViewController {
-    func fetchButtonOne() {
-        NetworkManager.shared.fetch(from: Link.urlSpace.rawValue) {[weak self] result in
+    func fetchSpace() {
+        NetworkManager.shared.fetch(from: Link.urlSpace.rawValue) { [weak self] result in
             switch result {
-            case .success(let infoSapace):
-                self?.dataSpace = infoSapace
+            case .success(let space):
+                print(space)
+                self?.succesAlert()
+                
+            case .failure(let error):
+                print(error)
+                self?.fieledAlert()
+            }
+        }
+       
+        
+    }
+    
+    private func fetchImage(){
+        NetworkManager.shared.fetchImage(from: Link.urlImage.rawValue) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.imageView.image = UIImage(data: imageData)
             case .failure(let error):
                 print(error)
             }
         }
-        
-        
-        
-        
-        
     }
 }

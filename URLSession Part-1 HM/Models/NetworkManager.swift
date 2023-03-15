@@ -10,7 +10,7 @@ import Foundation
 //MARK: - Link
 enum Link: String {
 case urlSpace = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
-case urlImage = ""
+case urlImage = "https://phonoteka.org/uploads/posts/2021-03/1616661760_14-p-oboi-na-aifon-kosmos-14.jpg"
 }
 
 //MARK: - ErrorNetwork
@@ -28,7 +28,7 @@ class  NetworkManager {
     init() {}
     
     // MARK: - FetchMetods
-    func fetch(from url: String?, completion: @escaping(Result <DataSpace,NetworkError>) -> Void) {
+    func fetch(from url: String?, completion: @escaping(Result <[Photo],NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else {
             completion(.failure(.invalidURL))
             return
@@ -43,20 +43,36 @@ class  NetworkManager {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
-                let showSpace = try jsonDecoder.decode(DataSpace.self, from: data)
+                let showSpace = try jsonDecoder.decode([Photo].self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(showSpace))
                 }
             } catch {
                 completion(.failure(.decodingError))
             }
-           
-             
+            
+            
         }.resume()
         
     }
-
     
-    
+    func fetchImage(from url: String?, completion: @escaping(Result<Data,NetworkError>)-> Void){
+        guard let url = URL(string: url ?? "") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: url) else {
+                completion(.failure(.noData))
+                return
+            }
+            DispatchQueue.main.async {
+                completion(.success(imageData))
+            }
+        }
+        
+        
+        
+        
+    }
 }
-

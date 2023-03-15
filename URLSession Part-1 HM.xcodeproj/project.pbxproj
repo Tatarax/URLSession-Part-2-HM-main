@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C043EAC29C23F0000591941 /* SpaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C043EAB29C23F0000591941 /* SpaceTableViewController.swift */; };
+		8C043EB229C24B6700591941 /* SpaceCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C043EB129C24B6700591941 /* SpaceCellTableViewCell.swift */; };
 		8C0DFDF329B0FE1200E8DD36 /* ActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DFDF229B0FE1200E8DD36 /* ActionLabel.swift */; };
 		8C7B52F829AE74A40025DCFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B52F729AE74A40025DCFB /* AppDelegate.swift */; };
 		8C7B52FA29AE74A40025DCFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B52F929AE74A40025DCFB /* SceneDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C043EAB29C23F0000591941 /* SpaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTableViewController.swift; sourceTree = "<group>"; };
+		8C043EB129C24B6700591941 /* SpaceCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCellTableViewCell.swift; sourceTree = "<group>"; };
 		8C0DFDF229B0FE1200E8DD36 /* ActionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLabel.swift; sourceTree = "<group>"; };
 		8C7B52F429AE74A40025DCFB /* URLSession Part-1 HM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "URLSession Part-1 HM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7B52F729AE74A40025DCFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				8C7B530F29AE81290025DCFB /* CollectionViewController.swift */,
+				8C043EAB29C23F0000591941 /* SpaceTableViewController.swift */,
+				8C043EB129C24B6700591941 /* SpaceCellTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 				8C7B52F829AE74A40025DCFB /* AppDelegate.swift in Sources */,
 				8C7B52FA29AE74A40025DCFB /* SceneDelegate.swift in Sources */,
 				8C7B530E29AE77650025DCFB /* Model.swift in Sources */,
+				8C043EAC29C23F0000591941 /* SpaceTableViewController.swift in Sources */,
+				8C043EB229C24B6700591941 /* SpaceCellTableViewCell.swift in Sources */,
 				8C0DFDF329B0FE1200E8DD36 /* ActionLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
