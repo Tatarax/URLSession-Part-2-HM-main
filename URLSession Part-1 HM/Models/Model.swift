@@ -13,10 +13,10 @@ struct DataSpace: Codable {
 }
 // MARK: - Photo
 struct Photo: Codable {
-    let id, sol: Int
+    let id, sol: Int?
     let camera: Camera
-    let imgSrc: String
-    let earthDate: String
+    let imgSrc: String?
+    let earthDate: String?
     let rover: Rover
 
     enum CodingKeys: String, CodingKey {
@@ -29,10 +29,10 @@ struct Photo: Codable {
 
 // MARK: - Camera
 struct Camera: Codable {
-    let id: Int
-    let name: String
-    let roverID: Int
-    let fullName: String
+    let id: Int?
+    let name: String?
+    let roverID: Int?
+    let fullName: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -43,8 +43,8 @@ struct Camera: Codable {
 
 // MARK: - Rover
 struct Rover: Codable {
-    let id: Int
-    let name, landingDate, launchDate, status: String
+    let id: Int?
+    let name, landingDate, launchDate, status: String?
 
     enum CodingKeys: String, CodingKey {
         case id, name

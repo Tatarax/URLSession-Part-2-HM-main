@@ -11,6 +11,7 @@ import Foundation
 enum Link: String {
 case urlSpace = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=fhaz&api_key=DEMO_KEY"
 case urlImage = "https://phonoteka.org/uploads/posts/2021-03/1616661760_14-p-oboi-na-aifon-kosmos-14.jpg"
+case urlPicsumPhotos = "https://picsum.photos/200/300"
 }
 
 //MARK: - ErrorNetwork
@@ -56,7 +57,7 @@ class  NetworkManager {
         
     }
     
-    func fetchImage(from url: String?, completion: @escaping(Result<Data,NetworkError>)-> Void){
+    func fetchImage(from url: String?, completion: @escaping(Result<Data,NetworkError>)-> Void) {
         guard let url = URL(string: url ?? "") else {
             completion(.failure(.invalidURL))
             return
@@ -70,9 +71,20 @@ class  NetworkManager {
                 completion(.success(imageData))
             }
         }
-        
-        
-        
-        
+    }
+    func fetchPicsumPhotos(from url: String?, completion: @escaping(Result<Data,NetworkError>)-> Void) {
+        guard let url = URL(string: url ?? "") else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        DispatchQueue.global().async {
+            guard let picsumPhotoData = try? Data(contentsOf: url) else {
+                completion(.failure(.noData))
+                return
+            }
+            DispatchQueue.main.async {
+                completion(.success(picsumPhotoData))
+            }
+        }
     }
 }

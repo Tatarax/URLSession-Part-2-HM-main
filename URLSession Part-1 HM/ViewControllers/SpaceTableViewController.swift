@@ -34,10 +34,7 @@ class SpaceTableViewController: UITableViewController {
         
         return cell
          
-    }
-    
-    
-    
+        }
     }
 
 

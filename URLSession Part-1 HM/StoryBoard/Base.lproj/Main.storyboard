@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,7 +61,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="actionButtonLabel" destination="iLY-1m-7ag" id="PjV-xz-pni"/>
-                                    <segue destination="4fT-jr-Mxc" kind="show" id="ugX-fK-yIJ"/>
+                                    <segue destination="4fT-jr-Mxc" kind="show" identifier="cellButton" id="ugX-fK-yIJ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -81,6 +82,7 @@
                     <navigationItem key="navigationItem" id="9hY-CP-FwF"/>
                     <connections>
                         <outlet property="imageView" destination="R6w-DG-PNr" id="yZk-vJ-O7V"/>
+                        <segue destination="JbY-ec-Une" kind="show" identifier="showPicsumPhotos" id="b1d-63-pqE"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kp-NG-Jh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,7 +144,51 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwd-8y-tT0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429.7709923664122" y="117.60563380281691"/>
+            <point key="canvasLocation" x="473" y="-299"/>
+        </scene>
+        <!--Picsum Photos-->
+        <scene sceneID="35z-8K-rhe">
+            <objects>
+                <viewController id="JbY-ec-Une" customClass="PicsumPhotos" customModule="URLSession_Part_1_HM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZhR-Ls-8qa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bm6-cR-q75">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsI-fn-HqU">
+                                <rect key="frame" x="93" y="642" width="207" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="207" id="iIh-AH-f3W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show next pictures">
+                                    <color key="titleColor" systemColor="tintColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="JbY-ec-Une" eventType="touchUpInside" id="Lvs-an-cXg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PaE-9P-Un5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PaE-9P-Un5" firstAttribute="bottom" secondItem="MsI-fn-HqU" secondAttribute="bottom" constant="140" id="59h-l3-Ped"/>
+                            <constraint firstItem="PaE-9P-Un5" firstAttribute="trailing" secondItem="MsI-fn-HqU" secondAttribute="trailing" constant="93" id="CY0-q7-Bnl"/>
+                            <constraint firstItem="MsI-fn-HqU" firstAttribute="leading" secondItem="PaE-9P-Un5" secondAttribute="leading" constant="93" id="GnO-1A-uZb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7II-uo-mjN"/>
+                    <connections>
+                        <outlet property="picsumImage" destination="Bm6-cR-q75" id="XRS-zQ-eK2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYV-sY-WpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HGx-FB-Qjt">
@@ -169,6 +215,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

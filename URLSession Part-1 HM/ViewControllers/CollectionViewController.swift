@@ -9,11 +9,13 @@ import UIKit
 
     //MARK: - Private
 private let reuseIdentifier = "cellButton"
+private let reuseIdentifierPicsum = "showPicsumPhotos"
 
     //MARK: - Enum
 
 enum ActionButton: String, CaseIterable {
     case buttonOne = "Show info space"
+    case buttonTwo = "Show other photo"
    
 }
 
@@ -52,7 +54,7 @@ final class CollectionViewController: UICollectionViewController {
         
         switch actionButton {
         case .buttonOne: fetchSpace()
-       
+        case.buttonTwo: performSegue(withIdentifier: reuseIdentifierPicsum, sender: nil)
         }
         
     }
@@ -108,7 +110,7 @@ extension CollectionViewController {
                 self?.fieledAlert()
             }
         }
-       
+        
         
     }
     
@@ -123,3 +125,5 @@ extension CollectionViewController {
         }
     }
 }
+    
+    

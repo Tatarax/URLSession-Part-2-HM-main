@@ -10,6 +10,7 @@
 		8C043EAC29C23F0000591941 /* SpaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C043EAB29C23F0000591941 /* SpaceTableViewController.swift */; };
 		8C043EB229C24B6700591941 /* SpaceCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C043EB129C24B6700591941 /* SpaceCellTableViewCell.swift */; };
 		8C0DFDF329B0FE1200E8DD36 /* ActionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0DFDF229B0FE1200E8DD36 /* ActionLabel.swift */; };
+		8C3C675529C39F8900431801 /* PicsumPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3C675429C39F8900431801 /* PicsumPhotos.swift */; };
 		8C7B52F829AE74A40025DCFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B52F729AE74A40025DCFB /* AppDelegate.swift */; };
 		8C7B52FA29AE74A40025DCFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7B52F929AE74A40025DCFB /* SceneDelegate.swift */; };
 		8C7B52FF29AE74A40025DCFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C7B52FD29AE74A40025DCFB /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		8C043EAB29C23F0000591941 /* SpaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceTableViewController.swift; sourceTree = "<group>"; };
 		8C043EB129C24B6700591941 /* SpaceCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceCellTableViewCell.swift; sourceTree = "<group>"; };
 		8C0DFDF229B0FE1200E8DD36 /* ActionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionLabel.swift; sourceTree = "<group>"; };
+		8C3C675429C39F8900431801 /* PicsumPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotos.swift; sourceTree = "<group>"; };
 		8C7B52F429AE74A40025DCFB /* URLSession Part-1 HM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "URLSession Part-1 HM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C7B52F729AE74A40025DCFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C7B52F929AE74A40025DCFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				8C7B530D29AE77650025DCFB /* Model.swift */,
-				8CA285FD29C0F59F0002EB85 /* NetworkManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -62,6 +63,7 @@
 				8C7B530F29AE81290025DCFB /* CollectionViewController.swift */,
 				8C043EAB29C23F0000591941 /* SpaceTableViewController.swift */,
 				8C043EB129C24B6700591941 /* SpaceCellTableViewCell.swift */,
+				8C3C675429C39F8900431801 /* PicsumPhotos.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,6 +109,14 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		8C3C675629C3A6C700431801 /* NetworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8CA285FD29C0F59F0002EB85 /* NetworkManager.swift */,
+			);
+			path = NetworkAPI;
+			sourceTree = "<group>";
+		};
 		8C7B52EB29AE74A40025DCFB = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				8C0DFDF529B12A7B00E8DD36 /* ViewControllers */,
-				8C0DFDF829B12AFD00E8DD36 /* View */,
+				8C3C675629C3A6C700431801 /* NetworkAPI */,
 				8C0DFDF429B12A5500E8DD36 /* Models */,
+				8C0DFDF829B12AFD00E8DD36 /* View */,
 				8C0DFDF929B12B1000E8DD36 /* StoryBoard */,
 				8C0DFDF629B12AA300E8DD36 /* App */,
 				8C0DFDFA29B12B2500E8DD36 /* Scene */,
@@ -216,6 +227,7 @@
 				8C7B530E29AE77650025DCFB /* Model.swift in Sources */,
 				8C043EAC29C23F0000591941 /* SpaceTableViewController.swift in Sources */,
 				8C043EB229C24B6700591941 /* SpaceCellTableViewCell.swift in Sources */,
+				8C3C675529C39F8900431801 /* PicsumPhotos.swift in Sources */,
 				8C0DFDF329B0FE1200E8DD36 /* ActionLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
