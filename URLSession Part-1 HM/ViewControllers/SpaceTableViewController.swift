@@ -10,12 +10,7 @@ import UIKit
 class SpaceTableViewController: UITableViewController {
     
     private var dataSpace: [Photo] = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-      
-    }
+    
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
