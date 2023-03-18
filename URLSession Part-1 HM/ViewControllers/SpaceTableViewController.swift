@@ -11,6 +11,12 @@ class SpaceTableViewController: UITableViewController {
     
     private var dataSpace: [Photo] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        fetchSpace()
+    }
+    
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,11 +41,11 @@ class SpaceTableViewController: UITableViewController {
 
 
 extension SpaceTableViewController {
-    private func fetchSpace(){
+    private func fetchSpace() {
         NetworkManager.shared.fetch(from: Link.urlSpace.rawValue) { [weak self] result in
             switch result {
             case .success(let space):
-                self?.dataSpace = space
+                self?.dataSpace = space.photos
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)

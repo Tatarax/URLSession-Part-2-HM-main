@@ -10,6 +10,7 @@ import UIKit
     //MARK: - Private
 private let reuseIdentifier = "cellButton"
 private let reuseIdentifierPicsum = "showPicsumPhotos"
+private let reuseIndentifierInfoSpace = "cell"
 
     //MARK: - Enum
 
@@ -53,7 +54,7 @@ final class CollectionViewController: UICollectionViewController {
         let actionButton = actionButton[indexPath.item]
         
         switch actionButton {
-        case .buttonOne: fetchSpace()
+        case .buttonOne: performSegue(withIdentifier: reuseIndentifierInfoSpace, sender: nil)
         case.buttonTwo: performSegue(withIdentifier: reuseIdentifierPicsum, sender: nil)
         }
         
@@ -98,23 +99,8 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension CollectionViewController {
-    func fetchSpace() {
-        NetworkManager.shared.fetch(from: Link.urlSpace.rawValue) { [weak self] result in
-            switch result {
-            case .success(let space):
-                print(space)
-                self?.succesAlert()
-                
-            case .failure(let error):
-                print(error)
-                self?.fieledAlert()
-            }
-        }
-        
-        
-    }
-    
-    private func fetchImage(){
+   
+    private func fetchImage() {
         NetworkManager.shared.fetchImage(from: Link.urlImage.rawValue) { [weak self] result in
             switch result {
             case .success(let imageData):

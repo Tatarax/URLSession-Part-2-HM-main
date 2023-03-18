@@ -61,7 +61,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="actionButtonLabel" destination="iLY-1m-7ag" id="PjV-xz-pni"/>
-                                    <segue destination="4fT-jr-Mxc" kind="show" identifier="cellButton" id="ugX-fK-yIJ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -83,36 +82,38 @@
                     <connections>
                         <outlet property="imageView" destination="R6w-DG-PNr" id="yZk-vJ-O7V"/>
                         <segue destination="JbY-ec-Une" kind="show" identifier="showPicsumPhotos" id="b1d-63-pqE"/>
+                        <segue destination="4fT-jr-Mxc" kind="show" identifier="cell" id="aHC-h7-2Hg"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Kp-NG-Jh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-315.26717557251908" y="117.60563380281691"/>
+            <point key="canvasLocation" x="-326" y="118"/>
         </scene>
         <!--Space Table View Controller-->
         <scene sceneID="tJu-H7-Kkz">
             <objects>
                 <tableViewController id="4fT-jr-Mxc" customClass="SpaceTableViewController" customModule="URLSession_Part_1_HM" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="P84-T1-Vbk">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="P84-T1-Vbk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="vym-vJ-JJG" customClass="SpaceCellTableViewCell" customModule="URLSession_Part_1_HM" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vym-vJ-JJG" id="C7G-5l-xFw" customClass="SpaceCell" customModule="URLSession_Part_1_HM" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7BE-2I-O5m">
                                             <rect key="frame" x="20" y="10" width="333" height="40.666666666666664"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-hj-Dcr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="T2T-hj-Dcr">
                                                     <rect key="frame" x="0.0" y="0.0" width="333" height="20.333333333333332"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsl-jv-rwy">
                                                     <rect key="frame" x="0.0" y="20.333333333333336" width="333" height="20.333333333333336"/>

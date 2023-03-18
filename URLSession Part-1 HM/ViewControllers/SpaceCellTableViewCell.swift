@@ -13,9 +13,9 @@ class SpaceCellTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dataLabel: UILabel!
     
-    func configur(with dataSpace: Photo){
-        nameLabel.text = dataSpace.imgSrc
-        dataLabel.text = dataSpace.earthDate
+    func configur(with dataSpace: Photo) {
+        nameLabel.text = dataSpace.camera.name
+        dataLabel.text = dataSpace.camera.fullName
     }
 
 }

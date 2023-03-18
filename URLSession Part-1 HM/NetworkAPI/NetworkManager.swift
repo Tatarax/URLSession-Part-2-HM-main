@@ -29,7 +29,7 @@ class  NetworkManager {
     init() {}
     
     // MARK: - FetchMetods
-    func fetch(from url: String?, completion: @escaping(Result <[Photo],NetworkError>) -> Void) {
+    func fetch(from url: String?, completion: @escaping(Result <DataSpace,NetworkError>) -> Void) {
         guard let url = URL(string: url ?? "") else {
             completion(.failure(.invalidURL))
             return
@@ -44,7 +44,7 @@ class  NetworkManager {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
-                let showSpace = try jsonDecoder.decode([Photo].self, from: data)
+                let showSpace = try jsonDecoder.decode(DataSpace.self, from: data)
                 DispatchQueue.main.async {
                     completion(.success(showSpace))
                 }
